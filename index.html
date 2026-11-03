@@ -104,6 +104,29 @@ details p,details li{font-size:13px;line-height:1.7;color:var(--fg);opacity:.85}
 .vtab small{font-size:8px;letter-spacing:.2em;color:var(--accent)}.vtab.on .vt-l{color:var(--primary)}.vtab:focus-visible{outline:2px solid var(--primary);outline-offset:6px;border-radius:28px}
 .stage canvas{touch-action:none}
 .stage .e3d{position:absolute!important;inset:0;width:auto!important;height:auto!important}
+#playBtn{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(env(safe-area-inset-bottom,0px) + 34px);z-index:25;width:min(84vw,300px);height:66px;padding:0;border:0;background:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+#playBtn .wb-l{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;font:700 15px var(--d);letter-spacing:.22em;color:#fff;text-shadow:0 1px 3px #02222f,0 0 14px #04384e;pointer-events:none}
+#playBtn small{font:10px var(--m);letter-spacing:.14em;margin-top:4px;color:#d8f6ff;opacity:.9}
+#playBtn:focus-visible{outline:2px solid #7fe9ff;outline-offset:10px;border-radius:34px}
+.gm{position:relative;overflow:hidden}.gm.shake{animation:gsk .35s}@keyframes gsk{20%{transform:translateX(-9px)}40%{transform:translateX(8px)}60%{transform:translateX(-6px)}80%{transform:translateX(4px)}}
+.gm-hud{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px}.gm-hud div{border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center;background:var(--bg)}
+.gm-hud small{display:block;font-size:9px;letter-spacing:.2em;color:var(--muted)}.gm-hud b{font:700 clamp(15px,4vw,20px) var(--d);color:var(--primary)}.gm-hud s{text-decoration:none;color:#27413a}#gli{color:var(--danger)!important;letter-spacing:.1em}
+.tbar{height:6px;background:#0a1210;border-radius:3px;overflow:hidden;margin-bottom:14px}.tbar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,var(--primary),var(--accent));transition:width .1s linear}.tbar.low i{background:var(--danger)}
+.gm-panel{border:1px dashed rgba(0,255,157,.35);border-radius:10px;padding:16px;background:rgba(5,7,10,.7);text-align:center}.gm-lab{font-size:10px;letter-spacing:.3em;color:var(--muted)}
+.ct{font:900 clamp(30px,9vw,60px) var(--d);letter-spacing:.16em;color:var(--accent);text-shadow:0 0 22px rgba(0,229,255,.45);margin:12px 0;min-height:1.2em;word-break:break-all}.ct span{display:inline-block;min-width:.7em}.ct .lk{color:var(--primary);text-shadow:0 0 22px rgba(0,255,157,.55)}
+.gm-info{font-size:13px;line-height:1.6;color:var(--fg);min-height:3.2em}.gm-info span{color:var(--muted)}.gm-info b{color:var(--primary)}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0}@media(max-width:480px){.opts{grid-template-columns:1fr}}
+.opt{display:flex;align-items:center;gap:12px;padding:14px;border:1px solid var(--line);background:var(--bg);border-radius:10px;font:700 clamp(15px,4vw,19px) var(--d);letter-spacing:.14em;color:var(--fg);text-align:left;transition:all .15s}
+.opt b{width:30px;height:30px;flex:none;border:1px solid var(--primary);display:grid;place-items:center;color:var(--primary);border-radius:6px;font-size:13px;letter-spacing:0}
+.opt:hover:not(.done),.opt:focus-visible{border-color:var(--primary);box-shadow:0 0 22px rgba(0,255,157,.3);transform:translateY(-2px);outline:none}
+.opt.ok{border-color:var(--primary);background:rgba(0,255,157,.14);box-shadow:0 0 30px rgba(0,255,157,.45)}.opt.bad{border-color:var(--danger);background:rgba(255,77,106,.14);animation:gsk .35s}
+.opt.gone{opacity:.22;text-decoration:line-through;pointer-events:none}.opt.done{pointer-events:none}
+.gm-tools .b:disabled{opacity:.35;pointer-events:none}.gm-msg{min-height:1.6em;margin-top:12px;text-align:center;font:700 13px var(--d);letter-spacing:.12em;color:var(--muted)}.gm-msg.win{color:var(--primary)}.gm-msg.lose{color:var(--danger)}.gm-msg.info{color:var(--accent)}
+.gmov{position:absolute;inset:0;z-index:5;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:22px;text-align:center;background:rgba(5,7,10,.93);backdrop-filter:blur(3px)}.gmov.on{display:flex}
+.gmov h3{margin:0;font:900 clamp(18px,4.6vw,26px) var(--d);letter-spacing:.14em;color:var(--primary)}.gmov ul{max-width:34em;text-align:left;line-height:1.7;font-size:14px;margin:0;padding-left:20px}.gmov .big{font:900 56px var(--d);color:var(--accent);margin:0}.gmov p{margin:0;line-height:1.7}
+.gm-dos{display:none;margin-top:12px;padding:12px 14px;border-left:3px solid var(--accent);background:rgba(0,229,255,.06);font-size:13px;line-height:1.7;color:var(--fg)}.gm-dos.on{display:block}.gm-dos.win{border-color:var(--primary);background:rgba(0,255,157,.07)}.gm-dos.lose{border-color:var(--danger);background:rgba(255,77,106,.08);color:#ffc4cd}
+.gmov .clock{font:900 clamp(34px,10vw,56px) var(--d);color:var(--danger);letter-spacing:.12em;text-shadow:0 0 24px rgba(255,77,106,.6);animation:fl .9s steps(2) infinite}.gmov .story{max-width:30em;min-height:5.2em;font-size:clamp(14px,3.6vw,17px);line-height:1.7;color:var(--primary)}.gmov .tease{font-size:13px;color:var(--danger);letter-spacing:.06em;max-width:30em}
+#play.danger::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:30;box-shadow:inset 0 0 140px rgba(255,40,70,.6);animation:dg 1s ease-in-out infinite}@keyframes dg{50%{opacity:.3}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition-duration:.01ms!important}}
 </style>
 </head>
@@ -122,6 +145,8 @@ details p,details li{font-size:13px;line-height:1.7;color:var(--fg);opacity:.85}
  <section class="page" id="term"><div class="win" id="win"><div class="tb"><s style="background:var(--danger)"></s><s style="background:var(--accent)"></s><s style="background:var(--primary)"></s><span id="wt" style="margin-left:8px">Terminal // accessing Cipher-~</span></div><pre id="tx" aria-live="polite"></pre></div></section>
 </div>
 <section class="page" id="tool" style="z-index:21"></section>
+<section class="page" id="play" style="z-index:21"></section>
+<button id="playBtn" type="button" style="display:none" aria-label="Code Breaker: guess the word game"><canvas class="wb-c" aria-hidden="true"></canvas><span class="wb-l">CODE BREAKER<small>intercept · decode · survive</small></span></button>
 <div id="alert"><b>SYSTEM BREACHED</b><small>UNAUTHORISED ACCESS DETECTED</small></div>
 <div id="wipe"><i></i><i></i><i></i><i></i><i></i></div>
 <button id="snd" type="button" aria-label="Toggle sound">sound: off</button>
@@ -134,31 +159,43 @@ const $=s=>document.querySelector(s),wait=ms=>new Promise(r=>setTimeout(r,ms)),r
  (function L(t){requestAnimationFrame(L);if(t-last<48)return;last=t;x.fillStyle='rgba(5,7,10,.08)';x.fillRect(0,0,w,h);x.font=fs+'px "Share Tech Mono",monospace';
   for(let i=0;i<dr.length;i++){const y=dr[i]*fs;x.fillStyle=Math.random()>.92?'#d7f7ef':'#00ff9d';x.globalAlpha=Math.random()>.7?.9:.45;x.fillText(CH[Math.random()*CH.length|0],i*fs,y);if(y>h&&Math.random()>.975)dr[i]=0;dr[i]++}x.globalAlpha=1})(0)})();
 /* ---------- sound (synthesized) ---------- */
-let ac,mg,on=false;
-function audio(){if(ac)return;ac=new (window.AudioContext||window.webkitAudioContext)();mg=ac.createGain();mg.gain.value=0;mg.connect(ac.destination);
- const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=380;f.connect(mg);
- [55,55.4,82.5].forEach((fr,i)=>{const o=ac.createOscillator();o.type=i%2?'sawtooth':'triangle';o.frequency.value=fr;const g=ac.createGain();g.gain.value=.04;o.connect(g).connect(f);o.start()})}
-let vol=.8;
-function setSound(v){on=v;const t='sound: '+(v?'on':'off');$('#snd').textContent=t;const s2=$('#snd2');if(s2)s2.textContent=t;if(v){audio();ac.resume();mg.gain.setTargetAtTime(.45*vol,ac.currentTime,.4)}else if(ac)mg.gain.setTargetAtTime(0,ac.currentTime,.2)}
-function setVolume(v){vol=v;if(on&&ac)mg.gain.setTargetAtTime(.45*vol,ac.currentTime,.05)}
+let ac,mg,on=false,vol=.9,silent;
+/* iOS: Web Audio is muted by the ring/silent switch unless the page asks for a "playback" audio session */
+function unlockIOS(){try{if(navigator.audioSession)navigator.audioSession.type='playback'}catch(e){}
+ try{if(!silent){silent=document.createElement('audio');silent.setAttribute('playsinline','');silent.loop=true;silent.src='data:audio/wav;base64,UklGRiYAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQIAAAAA'}const p=silent.play();p&&p.catch&&p.catch(()=>{})}catch(e){}}
+function audio(){if(ac)return;const C=window.AudioContext||window.webkitAudioContext;ac=new C({latencyHint:'interactive'});
+ const cp=ac.createDynamicsCompressor();cp.threshold.value=-14;cp.ratio.value=6;cp.attack.value=.003;cp.release.value=.2;
+ mg=ac.createGain();mg.gain.value=0;mg.connect(cp);cp.connect(ac.destination);
+ const f=ac.createBiquadFilter();f.type='lowpass';f.frequency.value=900;f.connect(mg);
+ [110,110.7,165,220.4].forEach((fr,i)=>{const o=ac.createOscillator();o.type=i%2?'sawtooth':'triangle';o.frequency.value=fr;const g=ac.createGain();g.gain.value=.03;o.connect(g).connect(f);o.start()});
+ const b=ac.createBuffer(1,1,22050),s=ac.createBufferSource();s.buffer=b;s.connect(ac.destination);s.start(0)}
+function wake(){if(ac&&ac.state!=='running'){const p=ac.resume();p&&p.catch&&p.catch(()=>{})}}
+['pointerdown','touchend','click','keydown'].forEach(e=>addEventListener(e,wake,{passive:true,capture:true}));
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)wake()});
+const GAIN=1.2;
+function setSound(v){on=v;const t='sound: '+(v?'on':'off');$('#snd').textContent=t;const s2=$('#snd2');if(s2)s2.textContent=t;
+ if(v){unlockIOS();audio();wake();mg.gain.setTargetAtTime(vol*GAIN,ac.currentTime,.05);setTimeout(()=>{tone(880,.12,'triangle',.3);setTimeout(()=>tone(1320,.18,'triangle',.3),110)},30)}else if(ac)mg.gain.setTargetAtTime(0,ac.currentTime,.1)}
+function setVolume(v){vol=v;if(on&&ac)mg.gain.setTargetAtTime(vol*GAIN,ac.currentTime,.05)}
 $('#snd').onclick=()=>setSound(!on);
-function tone(fr,d,ty='square',v=.1,sl){if(!on)return;const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.setValueAtTime(fr,ac.currentTime);if(sl)o.frequency.exponentialRampToValueAtTime(sl,ac.currentTime+d);g.gain.setValueAtTime(v,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d);o.connect(g).connect(mg);o.start();o.stop(ac.currentTime+d)}
-function click(){if(!on)return;const n=ac.createBufferSource(),b=ac.createBuffer(1,2400,ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.exp(-i/260);n.buffer=b;
- const f=ac.createBiquadFilter();f.type='bandpass';f.frequency.value=1800+Math.random()*1800;f.Q.value=1.2;const g=ac.createGain();g.gain.value=.9;n.connect(f).connect(g).connect(mg);n.start();tone(150,.05,'sine',.2)}
-const ding=()=>{tone(1760,1.1,'sine',.1);tone(2637,.8,'sine',.04)};
+function tone(fr,d,ty='square',v=.1,sl){if(!on||!ac)return;const o=ac.createOscillator(),g=ac.createGain();o.type=ty;o.frequency.setValueAtTime(fr,ac.currentTime);if(sl)o.frequency.exponentialRampToValueAtTime(sl,ac.currentTime+d);g.gain.setValueAtTime(v,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d);o.connect(g).connect(mg);o.start();o.stop(ac.currentTime+d)}
+function click(){if(!on||!ac)return;const n=ac.createBufferSource(),b=ac.createBuffer(1,2400,ac.sampleRate),d=b.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=(Math.random()*2-1)*Math.exp(-i/260);n.buffer=b;
+ const f=ac.createBiquadFilter();f.type='bandpass';f.frequency.value=1800+Math.random()*1800;f.Q.value=1.2;const g=ac.createGain();g.gain.value=1.8;n.connect(f).connect(g).connect(mg);n.start();tone(240,.05,'triangle',.3)}
+const ding=()=>{tone(1760,1.1,'sine',.18);tone(2637,.8,'sine',.08)};
 /* ---------- intro sequence ---------- */
-async function typeLines(t,txt,spd=26){let s='';for(const ch of txt){s+=ch;t.innerHTML=s.replace(/</g,'&lt;')+'<span class="cur">█</span>';if(ch!==' '&&ch!=='\n')click();await wait(ch==='\n'?260:spd+Math.random()*28)}}
+/** Types txt in about `total` ms. Clicks are throttled so fast typing still sounds like a typewriter. */
+async function typeLines(t,txt,total){const ch=[...txt],nl=ch.filter(c=>c==='\n').length,per=Math.max(4,(total-nl*70)/Math.max(1,ch.length-nl));let s='',lc=0;
+ for(const c of ch){s+=c;t.innerHTML=s.replace(/</g,'&lt;')+'<span class="cur">█</span>';if(c!==' '&&c!=='\n'){const n=performance.now();if(n-lc>42){lc=n;click()}}await wait(c==='\n'?70:per)}}
 let stage='landing';
 const MAIN=['> ACCESSING CIPHER-~ ...','> HANDSHAKE ............ OK','> LOADING KEY VAULT .... OK','> LOCAL SURVEILLANCE ... DETECTED'];
 const BR=['> INITIATING SECURE CHANNEL...','> BYPASSING LOCAL SURVEILLANCE...','> ENCRYPTION CORE ONLINE.','','We are here to make your journal more...','invincible.','','> ACCESS GRANTED.'];
-const sec=id=>{document.querySelectorAll('#fx .page,#tool').forEach(p=>p.classList.remove('on'));if(id)$(id).classList.add('on')};
+const sec=id=>{document.querySelectorAll('#fx .page,#tool,#play').forEach(p=>p.classList.remove('on'));if(id)$(id).classList.add('on')};
 async function begin(){if(stage!=='landing')return;stage='term';setSound(true);sec('#term');
- const tx=$('#tx');await wait(300);await typeLines(tx,MAIN.join('\n'));await wait(500);
+ const tx=$('#tx');await wait(120);await typeLines(tx,MAIN.join('\n'),2000);await wait(100);
  document.body.classList.add('hack');$('#alert').style.display='flex';$('#win').classList.add('red');$('#wt').textContent='System breach // accessing Cipher-~';
- for(let i=0;i<8;i++){tone(90+Math.random()*60,.14,'sawtooth',.18,40);await wait(150)}
- for(let i=0;i<14;i++){tone(300+Math.random()*1500,.05,'square',.05);await wait(55)}
- $('#alert').style.display='none';document.body.classList.remove('hack');await wait(250);
- await typeLines(tx,BR.join('\n'),20);ding();await wait(1000);
+ for(let i=0;i<8;i++){tone(220+Math.random()*120,.08,'sawtooth',.3,100);await wait(75)}
+ for(let i=0;i<14;i++){tone(500+Math.random()*1500,.03,'square',.1);await wait(28)}
+ $('#alert').style.display='none';document.body.classList.remove('hack');await wait(80);
+ await typeLines(tx,BR.join('\n'),2000);ding();await wait(450);
  stage='cipher';sec(null);showCipher()}
 $('#enter').onclick=begin;
 $('#enter').onmousemove=e=>{const r=e.currentTarget.getBoundingClientRect();e.currentTarget.style.setProperty('--mx',(e.clientX-r.left)/r.width*100+'%');e.currentTarget.style.setProperty('--my',(e.clientY-r.top)/r.height*100+'%')};
@@ -171,9 +208,9 @@ function mkFrame(label,theme,id,parent){const f=document.createElement('iframe')
 function showCipher(){document.body.classList.add('light');const f=$('#cstage');f.style.display='block';f.style.opacity=0;f.srcdoc=venomDoc('Cipher',0,'cipher');frames.set('cipher',{f,ready:false});requestAnimationFrame(()=>f.style.opacity=1);
  setTimeout(()=>{const o=frames.get('cipher');if(o&&!o.ready){f.style.display='none';const c=$('#choice');c.innerHTML='<button class="fb" id="fbc">CIPHER</button>';c.style.display='flex';document.body.classList.remove('light');$('#fbc').onclick=()=>act('cipher')}},4000)}
 function showChoice(){document.body.classList.remove('light');$('#cstage').style.display='none';const c=$('#choice');c.innerHTML='';c.style.display='flex';
- mkFrame('Encrypt',1,'encrypt',c);mkFrame('Decrypt',1,'decrypt',c);stage='choice'}
+ mkFrame('Encrypt',1,'encrypt',c);mkFrame('Decrypt',1,'decrypt',c);$('#playBtn').style.display='flex';stage='choice'}
 async function act(id){
- if(id==='cipher'){tone(60,.7,'sawtooth',.2,500);const f=$('#cstage');try{f.contentWindow.postMessage({theme:1},'*')}catch{}
+ if(id==='cipher'){tone(120,.7,'sawtooth',.3,600);const f=$('#cstage');try{f.contentWindow.postMessage({theme:1},'*')}catch{}
   await wait(1200);document.body.classList.remove('light');showChoice();await wait(700);f.style.display='none';f.srcdoc=''}
  else go(id)}
 addEventListener('message',e=>{const d=e.data;if(!d||!d.venom)return;const o=frames.get(d.id);if(!o||o.f.contentWindow!==e.source)return;
@@ -632,11 +669,11 @@ function trans(t,k,E){const ch=[...t],n=ch.length,K=[...k.toUpperCase()],w=K.len
   }
 
   /** Organic black flood from the origin element, calls onCovered() when the screen is fully dark, then fades out. */
-  function ink(origin, onCovered, onDone) {
+  function ink(origin, onCovered, onDone, bg) {
     if (reduced() || typeof document === 'undefined') { onCovered && onCovered(); onDone && onDone(); return; }
     const r = origin.getBoundingClientRect(), x = r.left + r.width / 2, y = r.top + r.height / 2, vw = innerWidth, vh = innerHeight;
     const maxR = Math.hypot(Math.max(x, vw - x), Math.max(y, vh - y)) * 1.12;
-    const el = document.createElement('div'); el.style.cssText = 'position:fixed;inset:0;z-index:60;background:radial-gradient(circle at 30% 20%,#101614,#020403 60%);pointer-events:all';
+    const el = document.createElement('div'); el.style.cssText = 'position:fixed;inset:0;z-index:60;background:' + (bg || 'radial-gradient(circle at 30% 20%,#101614,#020403 60%)') + ';pointer-events:all';
     document.body.appendChild(el);
     const t0 = performance.now(), D = 800; let covered = false;
     (function f(now) {
@@ -648,6 +685,92 @@ function trans(t,k,E){const ch=[...t],n=ch.length,K=[...k.toUpperCase()],w=K.len
     })(t0);
   }
   return { attach, ink };
+});
+
+/* WaterBtn: a liquid "water droplet" button in the spirit of the venom motion, but clear, aqua and glassy.
+   Soft-body metaballs (body + wandering droplets + dripping drops + a strand that reaches for the pointer),
+   shaded per pixel with refraction-style rim light and specular highlights. Original canvas code.
+   WaterBtn.attach(buttonEl) -> { destroy(), pulse() }; buttonEl contains <canvas class="wb-c"> and the label. */
+(function (root, factory) {
+  const M = factory();
+  if (typeof module === 'object' && module.exports) module.exports = M; else root.WaterBtn = M;
+})(typeof self !== 'undefined' ? self : this, function () {
+  const PAD = 50, CELL = 2, TAU = Math.PI * 2, LX = -0.45, LY = -0.62, LZ = 0.64;
+  const reduced = () => typeof matchMedia !== 'undefined' && matchMedia('(prefers-reduced-motion:reduce)').matches;
+  const sstep = (a, b, x) => { const t = Math.max(0, Math.min(1, (x - a) / (b - a))); return t * t * (3 - 2 * t); };
+
+  /** Pure helper (testable): metaball field strength at a point. f >= 1 means "inside the water". */
+  function fieldAt(blobs, x, y) { let f = 0; for (const b of blobs) { const dx = x - b[0], dy = y - b[1]; f += b[2] * b[2] / (dx * dx + dy * dy + 4); } return f; }
+
+  function attach(btn) {
+    const cv = btn.querySelector('canvas'), cx = cv.getContext('2d'), lo = document.createElement('canvas'), lx = lo.getContext('2d');
+    let w = 0, h = 0, W = 0, H = 0, gw = 0, gh = 0, dpr = 1, img, field, raf = 0, dead = false, hover = 0, hoverT = 0, pulseV = 0, mx = 0, my = 0, lastW = -1;
+    const t0 = performance.now(), splash = [], chain = Array.from({ length: 7 }, () => ({ x: 0, y: 0 }));
+    function size() {
+      const r = btn.getBoundingClientRect(); w = Math.max(160, r.width); h = Math.max(46, r.height); lastW = r.width; dpr = Math.min(2, window.devicePixelRatio || 1);
+      W = w + PAD * 2; H = h + PAD * 2; cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      cv.style.cssText = `position:absolute;left:${-PAD}px;top:${-PAD}px;width:${W}px;height:${H}px;pointer-events:none`;
+      gw = Math.ceil(W / CELL); gh = Math.ceil(H / CELL); lo.width = gw; lo.height = gh; img = lx.createImageData(gw, gh); field = new Float32Array(gw * gh);
+      chain.forEach((c) => { c.x = 0; c.y = 0; });
+    }
+    size();
+    /* ---- blobs: [x, y, r] in px relative to the button centre ---- */
+    function blobs(t) {
+      const B = [], R = h * 0.5 * (1 + pulseV * 0.2), n = 8;
+      for (let i = 0; i < n; i++) { const u = i / (n - 1); B.push([(u - 0.5) * (w - h * 0.85), Math.sin(t * 1.3 + i * 1.7) * h * 0.07, R * 0.93 * (0.92 + 0.1 * Math.sin(t * 1.1 + i * 2.3))]); }
+      for (let i = 0; i < 5; i++) { const a = t * (0.42 + i * 0.12) + i * 1.9; B.push([Math.cos(a) * w * 0.41, Math.sin(a * 1.3 + i) * h * 0.66, h * (0.16 + 0.04 * Math.sin(t * 0.9 + i))]); }
+      for (let i = 0; i < 3; i++) {                                                       // slow drips that stretch, pinch off and fall
+        const p = ((t / (4.4 + i * 1.3)) + i * 0.37) % 1, x = (-0.26 + i * 0.27) * w + Math.sin(t * 0.7 + i) * 6, down = Math.pow(p, 1.6) * h * 0.62, fade = p < 0.9 ? 1 : Math.max(0, 1 - (p - 0.9) / 0.1);
+        B.push([x, h * 0.3 + down * 0.5, h * 0.2 * (1 - p * 0.5) * fade]); B.push([x, h * 0.48 + down, h * 0.115 * (1 - p * 0.3) * fade]);
+      }
+      if (hoverT > 0 || hover > 0.03) {                                                  // a watery strand that stretches toward the pointer
+        const tx = mx - W / 2, ty = my - H / 2, d = Math.hypot(tx, ty) || 1, nx = tx / d, ny = ty / d, ex = nx * w * 0.36, ey = ny * h * 0.34, len = Math.min(d - Math.hypot(ex, ey), 120) * hover;
+        chain.forEach((c, k) => { const u = (k + 1) / chain.length, ix = ex + nx * len * u + Math.sin(t * 3 + k) * 2.5 * u, iy = ey + ny * len * u + Math.cos(t * 2.6 + k) * 2.5 * u; c.x += (ix - c.x) * 0.2; c.y += (iy - c.y) * 0.2; B.push([c.x, c.y, h * (0.2 - k * 0.022) * (0.4 + 0.6 * hover)]); });
+      }
+      for (const s of splash) B.push([s.x, s.y, s.r * Math.max(0, s.life)]);
+      return B;
+    }
+    function draw(t, dt) {
+      hover += (hoverT - hover) * 0.1; pulseV *= 0.92;
+      for (let i = splash.length - 1; i >= 0; i--) { const s = splash[i]; s.x += s.vx * dt; s.y += s.vy * dt; s.vy += 380 * dt; s.life -= dt * 1.1; if (s.life <= 0) splash.splice(i, 1); }
+      const B = blobs(t), ox = -W / 2, oy = -H / 2;
+      for (let j = 0; j < gh; j++) { const y = oy + (j + 0.5) * CELL; for (let i = 0; i < gw; i++) field[j * gw + i] = fieldAt(B, ox + (i + 0.5) * CELL, y); }
+      const d = img.data;
+      for (let j = 0; j < gh; j++) for (let i = 0; i < gw; i++) {
+        const k = j * gw + i, f = field[k], o = k * 4;
+        if (f < 0.85) { d[o + 3] = 0; continue; }
+        const a = sstep(0.9, 1.12, f); if (a <= 0) { d[o + 3] = 0; continue; }
+        const fl = field[j * gw + Math.max(0, i - 1)], fr = field[j * gw + Math.min(gw - 1, i + 1)], fu = field[Math.max(0, j - 1) * gw + i], fd = field[Math.min(gh - 1, j + 1) * gw + i];
+        let nx = -(Math.min(fr, 2.4) - Math.min(fl, 2.4)) * 3, ny = -(Math.min(fd, 2.4) - Math.min(fu, 2.4)) * 3, nz = 1; const nl = Math.hypot(nx, ny, nz); nx /= nl; ny /= nl; nz /= nl;
+        const diff = Math.max(0, nx * LX + ny * LY + nz * LZ), hx = LX, hy = LY, hz = LZ + 1, hl = Math.hypot(hx, hy, hz), spec = Math.pow(Math.max(0, (nx * hx + ny * hy + nz * hz) / hl), 60);
+        const depth = Math.max(0, Math.min(1, (f - 1) / 1.4)), rim = 1 - depth, rim2 = rim * rim;
+        const x = ox + (i + 0.5) * CELL, y = oy + (j + 0.5) * CELL, caus = 0.5 + 0.5 * Math.sin(x * 0.055 + t * 1.1 + 2 * Math.sin(y * 0.08 + t * 0.7)), under = Math.max(0, ny) * 0.55, top = 1 - (y - oy) / H;
+        let r = 10 + 30 * diff + 150 * rim2 + 14 * caus * depth + 90 * under + 18 * top * depth, g = 88 + 80 * diff + 120 * rim2 + 22 * caus * depth + 110 * under + 30 * top * depth, b = 138 + 70 * diff + 90 * rim2 + 18 * caus * depth + 90 * under + 30 * top * depth;
+        r += spec * 255; g += spec * 255; b += spec * 255;
+        d[o] = Math.min(255, r); d[o + 1] = Math.min(255, g); d[o + 2] = Math.min(255, b);
+        d[o + 3] = Math.min(255, 255 * a * Math.min(0.96, 0.46 + 0.34 * rim + 0.14 * diff + spec * 0.7 + under * 0.3));
+      }
+      lx.putImageData(img, 0, 0); cx.setTransform(1, 0, 0, 1, 0, 0); cx.clearRect(0, 0, cv.width, cv.height); cx.imageSmoothingEnabled = true; cx.imageSmoothingQuality = 'high'; cx.drawImage(lo, 0, 0, cv.width, cv.height);
+    }
+    let prev = t0;
+    function loop(now) {
+      if (dead) return; raf = requestAnimationFrame(loop); if (!btn.isConnected) return;
+      if (btn.offsetParent === null && getComputedStyle(btn).display === 'none') return;      // hidden: idle
+      const r = btn.getBoundingClientRect(); if (Math.abs(r.width - lastW) > 1) size();
+      draw((now - t0) / 1000, Math.min(0.05, (now - prev) / 1000)); prev = now;
+    }
+    const rel = (e) => { const r = btn.getBoundingClientRect(); mx = e.clientX - r.left + PAD; my = e.clientY - r.top + PAD; };
+    btn.addEventListener('pointerenter', (e) => { hoverT = 1; rel(e); }); btn.addEventListener('pointermove', rel);
+    btn.addEventListener('pointerleave', () => { hoverT = 0; }); btn.addEventListener('focus', () => { hoverT = 0.0001; }); btn.addEventListener('blur', () => { hoverT = 0; });
+    btn.addEventListener('pointerdown', (e) => { rel(e); pulse(mx - W / 2, my - H / 2); });
+    function pulse(px, py) {
+      pulseV = 1; for (let i = 0; i < 12; i++) { const a = Math.random() * TAU, v = 90 + Math.random() * 170; splash.push({ x: px || 0, y: py || 0, vx: Math.cos(a) * v, vy: Math.sin(a) * v - 120, r: 4 + Math.random() * 6, life: 1 }); }
+    }
+    function destroy() { dead = true; cancelAnimationFrame(raf); }
+    if (reduced()) draw(0, 0.016); else raf = requestAnimationFrame(loop);
+    return { destroy, pulse, draw: (t) => draw(t || 0, 0.016) };
+  }
+  return { attach, fieldAt };
 });
 
 /* tool.js: key vault, cipher tool pages and the Enigma lab. Inlined into parent.html by build.py.
@@ -766,7 +889,7 @@ function paintTape() { const a = $('#tin'), b = $('#tout'); if (a) a.innerHTML =
 function labActive() { return stage === 'tool' && method === 'enigma' && $('#tool').classList.contains('on'); }
 
 /* ---------- sounds: mechanical keys, rotor ratchet, lamp relay ---------- */
-const sfxKey = () => { if (!on) return; click(); tone(95, .1, 'sine', .22, 55); };
+const sfxKey = () => { if (!on) return; click(); tone(190, .08, 'triangle', .3, 110); };
 const sfxKeyUp = () => { if (on) tone(240, .03, 'square', .03); };
 const sfxRotor = (i) => { if (on) setTimeout(() => { tone(1500, .018, 'square', .035); tone(620, .05, 'triangle', .05); }, 20 + i * 38); };
 const sfxLamp = () => { if (on) { tone(2300, .012, 'square', .03); tone(480, .22, 'sine', .028); } };
@@ -868,7 +991,7 @@ function say(t, err) { const o = $('#o'); if (!o) return; o.className = 'out' + 
 /** Switch cipher method. Enigma gets the cinematic ink transition. */
 function switchMethod(btn) {
   const m = btn.dataset.m; if (m === method) return;
-  if (m === 'enigma') { tone(70, .6, 'sawtooth', .12, 300); VenomTab.ink(btn, () => { method = m; render(tmode); }); }
+  if (m === 'enigma') { tone(140, .6, 'sawtooth', .25, 600); VenomTab.ink(btn, () => { method = m; render(tmode); }); }
   else { method = m; render(tmode); }
 }
 
@@ -904,13 +1027,204 @@ async function runEnigma(t) {
   runBusy = false; if ($('#run')) $('#run').textContent = runLabel(); if (on) ding();
 }
 
+/* CODE BREAKER core: word bank, ciphers and round generator (pure logic, no DOM, fully testable). */
+(function (root, factory) {
+  const M = factory();
+  if (typeof module === 'object' && module.exports) module.exports = M; else root.CodeBreakerCore = M;
+})(typeof self !== 'undefined' ? self : this, function () {
+  const AL = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', mod = (n) => ((n % 26) + 26) % 26;
+  const BANK = {
+    4: 'CODE LOCK SAFE MOON STAR FIRE WIND RAIN SNOW GOLD IRON DARK ECHO MIST TIDE WOLF HAWK LION BEAR DUSK DAWN PLOT TRAP RING JADE ONYX RUBY OPAL NOTE PAGE SEAL VEIL MASK GATE FATE'.split(' '),
+    5: 'NIGHT STORM RAVEN TOWER ALARM AGENT SCOUT CROWN SWORD EMBER FLAME FROST OCEAN RIVER STONE LUNAR SOLAR PIXEL LASER ROBOT DIARY CLOAK QUEST MAGIC RELAY CABLE ORBIT COMET TIGER EAGLE SNAKE VIPER SPARK BLAZE GHOST'.split(' '),
+    6: 'CIPHER SECRET SHADOW FALCON SIGNAL DAGGER PHOTON ROCKET BEACON GALAXY HUNTER SILENT WINTER SUMMER FOREST DESERT CASTLE BRIDGE MATRIX VECTOR BINARY TUNNEL MIRROR SPIRIT NEBULA ANCHOR AMBUSH'.split(' '),
+    7: 'STEALTH PHANTOM LANTERN MYSTERY CONSOLE ENCRYPT DECRYPT CAPTAIN CRYSTAL DIAMOND MISSION NETWORK COMPASS HORIZON JOURNAL CHAPTER SILENCE WARRIOR RAINBOW VOYAGER'.split(' '),
+    8: 'PASSWORD MIDNIGHT TREASURE KEYBOARD BLACKOUT FIREWALL DAYBREAK SHADOWED ECLIPSES FORTRESS BLIZZARD'.split(' '),
+    9: 'ENCRYPTED DECRYPTED ADVENTURE NIGHTMARE MOONSTONE STARSHIPS MOONLIGHT NIGHTFALL STARLIGHT'.split(' ')
+  };
+  const shift = (w, k) => [...w].map((c) => AL[mod(AL.indexOf(c) + k)]).join('');
+  const atbash = (w) => [...w].map((c) => AL[25 - AL.indexOf(c)]).join('');
+  const vig = (w, key, d) => [...w].map((c, i) => AL[mod(AL.indexOf(c) + d * AL.indexOf(key[i % key.length]))]).join('');
+  const railOrder = (len, n) => { const rows = []; let r = 0, d = 1; for (let i = 0; i < len; i++) { rows.push(r); if (r === 0) d = 1; else if (r === n - 1) d = -1; r += d; } return [...Array(len).keys()].sort((a, b) => rows[a] - rows[b] || a - b); };
+  const rail = (w, n) => railOrder(w.length, n).map((i) => w[i]).join('');
+  const unrail = (s, n) => { const out = []; railOrder(s.length, n).forEach((p, j) => { out[p] = s[j]; }); return out.join(''); };
+  const rev = (s) => [...s].reverse().join('');
+
+  /* Each method: make(ri) -> { enc, dec, label, keyText, how } */
+  const METHODS = {
+    caesar: (ri) => { const k = 1 + ri(25); return { enc: (w) => shift(w, k), dec: (c) => shift(c, -k), label: 'Caesar shift', keyText: '+' + k, how: `Caesar shift +${k}: every letter was moved ${k} steps forward in the alphabet. Move each one ${k} steps back.` }; },
+    atbash: () => ({ enc: atbash, dec: atbash, label: 'Mirror alphabet (Atbash)', keyText: 'A↔Z', how: 'Mirror alphabet: A↔Z, B↔Y, C↔X… Swap every letter with its mirror partner.' }),
+    vig2: (ri) => { const key = AL[1 + ri(25)] + AL[1 + ri(25)]; return { enc: (w) => vig(w, key, 1), dec: (c) => vig(c, key, -1), label: 'Vigenère', keyText: key, how: `Vigenère with key “${key}”: letter 1 was shifted by ${key[0]}, letter 2 by ${key[1]}, then the key repeats (A=0, B=1, C=2…). Shift each letter back.` }; },
+    rail3: () => ({ enc: (w) => rail(w, 3), dec: (c) => unrail(c, 3), label: 'Rail fence', keyText: '3 rails', how: 'Rail fence, 3 rails: the word was written in a zig-zag over 3 rows, then read row by row. Rebuild the zig-zag to read it.' }),
+    revcaesar: (ri) => { const k = 1 + ri(25); return { enc: (w) => rev(shift(w, k)), dec: (c) => shift(rev(c), -k), label: 'Reverse + Caesar', keyText: `+${k}, backwards`, how: `Reverse + Caesar +${k}: the letters were moved ${k} steps forward, then the word was written backwards. Read it backwards, then move each letter ${k} back.` }; },
+    vig3: (ri) => { const key = AL[1 + ri(25)] + AL[1 + ri(25)] + AL[1 + ri(25)]; return { enc: (w) => vig(w, key, 1), dec: (c) => vig(c, key, -1), label: 'Vigenère (long key)', keyText: key, how: `Vigenère with key “${key}”: letters are shifted by ${key[0]}, ${key[1]}, ${key[2]} in turn, then the key repeats (A=0, B=1, C=2…). Shift each letter back.` }; }
+  };
+  const methodsFor = (lv) => lv <= 4 ? ['caesar'] : lv <= 6 ? ['caesar', 'atbash'] : lv <= 8 ? ['caesar', 'atbash', 'vig2'] : lv <= 10 ? ['caesar', 'atbash', 'vig2', 'rail3'] : lv <= 12 ? ['caesar', 'atbash', 'vig2', 'rail3', 'revcaesar'] : ['caesar', 'atbash', 'vig2', 'rail3', 'revcaesar', 'vig3'];
+  const lenFor = (lv) => Math.min(9, 4 + Math.floor((lv - 1) / 2));
+  const timeFor = (lv) => Math.max(16, 42 - (lv - 1) * 2);
+  function similarity(a, b) {
+    let s = 0; const pool = [...b];
+    for (let i = 0; i < a.length; i++) { if (a[i] === b[i]) s += 2; const j = pool.indexOf(a[i]); if (j >= 0) { s += 1; pool.splice(j, 1); } }
+    return s;
+  }
+  /** Build one round. rng: () => float in [0,1). used: answers to avoid repeating. */
+  function makeRound(level, rng, used) {
+    rng = rng || Math.random; used = used || []; const ri = (n) => Math.floor(rng() * n);
+    let len = lenFor(level); while (!BANK[len] || BANK[len].length < 6) len--;
+    const bank = BANK[len], fresh = bank.filter((w) => !used.includes(w)), answer = (fresh.length ? fresh : bank)[ri((fresh.length || bank.length))];
+    const list = methodsFor(level), id = level > 4 && list.length > 1 && rng() < 0.55 ? list[list.length - 1] : list[ri(list.length)];
+    let m, cipher, tries = 0; do { m = METHODS[id](ri); cipher = m.enc(answer); } while (cipher === answer && ++tries < 20);
+    const diff = Math.min(1, (level - 1) / 12);
+    const wrong = bank.filter((w) => w !== answer).map((w) => ({ w, s: similarity(answer, w) + rng() * 7 * (1 - diff) })).sort((a, b) => b.s - a.s).slice(0, 3).map((x) => x.w);
+    const options = [...wrong, answer]; for (let i = 3; i > 0; i--) { const j = ri(i + 1);[options[i], options[j]] = [options[j], options[i]]; }
+    return { level, cipher, answer, options, correct: options.indexOf(answer), time: timeFor(level), info: { method: id, label: m.label, keyText: m.keyText, how: m.how, visible: level <= 2 }, decode: m.dec };
+  }
+  return { AL, BANK, shift, atbash, vig, rail, unrail, rev, METHODS, methodsFor, lenFor, timeFor, similarity, makeRound };
+});
+
+/* CODE BREAKER UI (#play): "Operation Nightfall", a thriller. Rounds come from gamecore.js; sound/routing from page globals. */
+const Game = (() => {
+  const C = CodeBreakerCore, KEY = 'cipherTilde.best';
+  const FRAGS = [
+    'Someone inside the agency is selling names. The only trace: a codename. THE LANTERN.',
+    'Your handler went dark three hours ago. His last message: “Do not trust the diary.”',
+    'The traitor hides messages in ordinary words. Words like the ones you are decoding now.',
+    'A dead drop is set for midnight. Someone knows you are listening.',
+    'Trace detected on your line. Keep decoding. Do not stop.',
+    'THE LANTERN used your codename inside a cipher. It knows who you are.',
+    'Two agents vanished last week. Their last words were a Caesar shift.',
+    'The shifts are not random. They are a countdown.',
+    'The mole’s name is hidden in the last three transmissions. You have already decoded two.',
+    'The lights in your building just flickered. Check the door. Then keep going.',
+    'THE LANTERN is not a person. It is a program, and it is reading your keystrokes.',
+    'It has been decoding YOU this whole time.',
+    'FINAL FRAGMENT: the first cipher was written in a diary. Your diary. You are the one who left the door open.'
+  ];
+  const SENDERS = ['UNKNOWN', 'RAVEN-7', 'SPECTER', 'N. KESTREL', 'THE LANTERN', 'ECHO-9', 'NO SENDER', 'ASH', 'COLD HARBOR'];
+  const TAUNTS = ['Too slow, agent.', 'I can see your screen.', 'Your trace is rising.', 'Careful. They are listening.', 'Was that a guess?', 'Tick. Tock.'];
+  const G = { level: 1, score: 0, lives: 3, hints: 3, keys: 2, streak: 0, wins: 0, n: 0, round: null, t: 0, gone: [], keyShown: false, locked: true, used: [], running: false, best: 0, beat: 0 };
+  let timer = null, token = 0, built = false, typeTok = 0;
+  const q = (s) => document.querySelector('#play ' + s);
+  try { G.best = +localStorage.getItem(KEY) || 0; } catch { /* storage blocked */ }
+  const saveBest = () => { try { localStorage.setItem(KEY, G.best); } catch { /* ignore */ } };
+  const sfx = {
+    ok: () => { tone(660, .12, 'triangle', .3); setTimeout(() => tone(990, .2, 'triangle', .3), 110); },
+    up: () => [523, 659, 784, 1047].forEach((f, i) => setTimeout(() => tone(f, .16, 'triangle', .28), i * 90)),
+    bad: () => { tone(220, .4, 'sawtooth', .3, 90); setTimeout(() => tone(150, .3, 'square', .18, 70), 120); },
+    alarm: () => [0, 1, 2].forEach((i) => setTimeout(() => tone(i % 2 ? 480 : 640, .14, 'square', .16), i * 160)),
+    pick: () => tone(900, .04, 'square', .05), hint: () => { tone(1500, .06, 'sine', .2); setTimeout(() => tone(2000, .1, 'sine', .2), 70); },
+    beat: () => { tone(170, .12, 'sine', .5, 90); setTimeout(() => tone(150, .1, 'sine', .4, 80), 140); }, glitch: () => { for (let i = 0; i < 6; i++) setTimeout(() => tone(300 + Math.random() * 1400, .03, 'square', .08), i * 35); }
+  };
+  /** Types text into el (with throttled typewriter clicks); cancels if a newer typing starts. */
+  function typeInto(el, text, ms, cls) {
+    const my = ++typeTok, n = [...text].length, per = Math.max(8, ms / Math.max(1, n)); let i = 0, lc = 0; el.className = 'gm-dos on ' + (cls || '');
+    (function step() { if (my !== typeTok) return; i++; el.innerHTML = esc([...text].slice(0, i).join('')) + (i < n ? '<span class="cur">█</span>' : ''); const now = performance.now(); if (now - lc > 45) { lc = now; click(); } if (i < n) setTimeout(step, per); })();
+  }
+  function build() {
+    if (built) return; built = true;
+    q('').innerHTML = `<header class="bar"><div class="logo">CIPHER-~</div><div class="st" id="gst">operation nightfall // standby</div></header>
+    <div class="wrap"><div class="card gm"><h2>CODE BREAKER</h2>
+      <div class="gm-hud"><div><small>LEVEL</small><b id="glv">1</b></div><div><small>SCORE</small><b id="gsc">0</b></div><div><small>BEST</small><b id="gbe">0</b></div><div><small>TRACE</small><b id="gli" aria-label="trace level"></b></div></div>
+      <div class="tbar" id="gtb"><i></i></div>
+      <div class="gm-panel"><div class="gm-lab" id="glab">INTERCEPTED TRANSMISSION</div><div class="ct" id="gct" aria-live="polite"></div><div class="gm-info" id="gin"></div></div>
+      <div class="opts" id="gopts"></div>
+      <div class="row gm-tools"><button class="b" id="ghint" type="button"></button><button class="b" id="gkey" type="button"></button><button class="b" id="gback" type="button" style="margin-left:auto">&lt; ABORT</button></div>
+      <div class="gm-msg" id="gmsg" aria-live="polite"></div>
+      <div class="gm-dos" id="gdos" aria-live="polite"></div>
+      <div class="gmov" id="gov"></div></div></div>
+    <footer class="foot">Keys 1–4 or A–D answer · H = 50/50 hint · K = reveal key</footer>`;
+    q('#gback').onclick = () => go('');
+    q('#ghint').onclick = hint; q('#gkey').onclick = keyHint;
+  }
+  const trace = () => [0, 34, 67, 100][3 - Math.max(0, G.lives)] + '%';
+  function danger() { q('').classList.toggle('danger', G.running && !G.locked ? (G.t <= 5 || G.lives === 1) : G.lives === 1 && G.running); }
+  function hud() {
+    q('#glv').textContent = G.level; q('#gsc').textContent = G.score; q('#gbe').textContent = G.best; q('#gli').textContent = trace(); q('#gli').style.color = G.lives <= 1 ? 'var(--danger)' : G.lives === 2 ? '#ffb347' : 'var(--primary)';
+    q('#ghint').textContent = `50/50 HINT ×${G.hints}`; q('#gkey').textContent = `REVEAL KEY ×${G.keys}`;
+    q('#ghint').disabled = G.locked || G.hints < 1 || G.gone.length >= 2; q('#gkey').disabled = G.locked || G.keys < 1 || G.keyShown;
+    q('#gst').textContent = `operation nightfall // level ${G.level}` + (G.streak > 1 ? ` // streak ${G.streak}` : ''); danger();
+  }
+  function scramble(el, text, ms, done) {
+    const my = ++token, t0 = performance.now(), n = text.length; el.innerHTML = [...text].map(() => '<span></span>').join(''); const sp = el.children;
+    (function f(now) {
+      if (my !== token) return; const p = Math.min(1, (now - t0) / ms);
+      for (let i = 0; i < n; i++) { const lock = p * (n + 1) > i + 1; sp[i].textContent = lock ? text[i] : C.AL[Math.random() * 26 | 0]; sp[i].className = lock ? 'lk' : ''; }
+      if (p < 1) requestAnimationFrame(f); else done && done();
+    })(t0);
+  }
+  function say(t, cls) { const m = q('#gmsg'); m.className = 'gm-msg ' + (cls || ''); m.textContent = t; }
+  function infoLine() {
+    const i = G.round.info; q('#gin').innerHTML = (i.visible || G.keyShown) ? `<b>${esc(i.label)}</b> · key <b>${esc(i.keyText)}</b><br><span>${esc(i.how)}</span>` : '<span>Method and key unknown. Spend a REVEAL KEY if you need them.</span>';
+  }
+  function nextRound() {
+    clearInterval(timer); G.round = C.makeRound(G.level, undefined, G.used); G.used.push(G.round.answer); if (G.used.length > 25) G.used.shift(); G.n++;
+    G.gone = []; G.keyShown = false; G.t = G.round.time; G.locked = false; G.beat = 0; say(''); q('#gdos').className = 'gm-dos'; infoLine();
+    q('#glab').textContent = `INTERCEPTED TRANSMISSION ${String(G.n).padStart(2, '0')} // FROM: ${SENDERS[(G.n * 7 + G.level) % SENDERS.length]}`;
+    const box = q('#gopts'); box.innerHTML = G.round.options.map((w, i) => `<button class="opt" type="button" data-i="${i}"><b>${'ABCD'[i]}</b>${w}</button>`).join('');
+    box.querySelectorAll('.opt').forEach((b) => b.onclick = () => choose(+b.dataset.i));
+    scramble(q('#gct'), G.round.cipher, 650); hud(); bar();
+    timer = setInterval(() => {
+      G.t -= 0.1; if (G.t <= 8 && G.t > 0) { G.beat -= 0.1; if (G.beat <= 0) { sfx.beat(); G.beat = Math.max(0.45, G.t / 8 * 0.9); } } bar(); danger(); if (G.t <= 0) choose(-1);
+    }, 100);
+  }
+  function bar() { const f = Math.max(0, G.t / G.round.time); q('#gtb i').style.width = (f * 100) + '%'; q('#gtb').classList.toggle('low', G.t <= 5); }
+  function choose(i) {
+    if (G.locked || !G.running) return; G.locked = true; clearInterval(timer); const r = G.round, btns = q('#gopts').querySelectorAll('.opt');
+    btns.forEach((b) => b.classList.add('done')); btns[r.correct].classList.add('ok');
+    if (i === r.correct) {
+      G.wins++; G.streak++; const gain = 100 + G.level * 20 + Math.round(G.t * 3) + (G.streak - 1) * 10 - (G.gone.length ? 25 : 0) - (G.keyShown && !r.info.visible ? 25 : 0), pts = Math.max(40, gain); G.score += pts;
+      if (G.score > G.best) { G.best = G.score; saveBest(); }
+      let extra = ''; if (G.wins % 3 === 0) { G.hints++; extra += ' +1 HINT'; } if (G.wins % 5 === 0) { G.keys++; extra += ' +1 KEY'; }
+      G.level++; sfx.ok(); setTimeout(sfx.up, 260); say(`DECODED! +${pts} pts · LEVEL ${G.level}${extra}`, 'win'); scramble(q('#gct'), r.answer, 700); hud();
+      const k = G.wins - 1, frag = k < FRAGS.length ? FRAGS[k] : 'NEW TRANSMISSION: another channel just opened. THE LANTERN is still out there.';
+      typeInto(q('#gdos'), `▌FRAGMENT ${String(Math.min(G.wins, FRAGS.length)).padStart(2, '0')}/${FRAGS.length} UNLOCKED ▌ ${frag}`, 1500, 'win');
+      setTimeout(() => { if (G.running) nextRound(); }, 2500);
+    } else {
+      G.lives--; G.streak = 0; if (i >= 0) btns[i].classList.add('bad'); sfx.bad(); setTimeout(sfx.alarm, 200); sfx.glitch(); const card = q('.card'); card.classList.add('shake'); setTimeout(() => card.classList.remove('shake'), 400);
+      say(i < 0 ? `TIME’S UP! It was ${r.answer}.` : `WRONG! It was ${r.answer}.`, 'lose'); scramble(q('#gct'), r.answer, 600); hud();
+      typeInto(q('#gdos'), G.lives > 0 ? `▌THE LANTERN▌ “${TAUNTS[Math.floor(Math.random() * TAUNTS.length)]}” TRACE ${trace()}` : '▌TRACE 100%▌ They have your location.', 1100, 'lose');
+      setTimeout(() => { if (!G.running) return; G.lives > 0 ? nextRound() : over(); }, 2400);
+    }
+  }
+  function hint() {
+    if (G.locked || G.hints < 1 || G.gone.length >= 2) return; G.hints--;
+    const wrong = [0, 1, 2, 3].filter((i) => i !== G.round.correct && !G.gone.includes(i)).sort(() => Math.random() - 0.5).slice(0, 2); G.gone.push(...wrong);
+    q('#gopts').querySelectorAll('.opt').forEach((b, i) => b.classList.toggle('gone', G.gone.includes(i))); sfx.hint(); say('Two wrong answers removed.', 'info'); hud();
+  }
+  function keyHint() { if (G.locked || G.keys < 1 || G.keyShown) return; G.keys--; G.keyShown = true; infoLine(); sfx.hint(); say('Key revealed.', 'info'); hud(); }
+  function overlay(html) { const o = q('#gov'); o.innerHTML = html; o.classList.add('on'); }
+  function start() {
+    typeTok++; Object.assign(G, { level: 1, score: 0, lives: 3, hints: 3, keys: 2, streak: 0, wins: 0, n: 0, used: [], running: true, locked: true }); q('#gov').classList.remove('on'); sfx.up(); nextRound();
+  }
+  function intro() {
+    G.running = false; G.locked = true; hud(); q('').classList.remove('danger'); q('#gct').innerHTML = '<span class="lk">????</span>'; q('#gin').innerHTML = ''; q('#gdos').className = 'gm-dos';
+    overlay(`<div class="clock">03:17 AM</div><div class="story" id="gstory"></div><ul><li>Pick the <b>one</b> real word hidden in each coded message. Beat the <b>timer</b>.</li><li>Every mistake raises the <b>TRACE</b>. At 100% they find you.</li><li>Each decode unlocks a <b>secret fragment</b> of the story. The codes get <b>harder</b> every time.</li></ul><button class="b go" id="gstart" type="button">ACCEPT THE MISSION</button>${G.best ? `<p class="note">Best score: ${G.best}</p>` : ''}`);
+    typeInto(q('#gstory'), 'An unknown number sends a single line of ciphertext. Your codename is hidden inside it. Whoever wrote it knows you are awake.', 3400, 'story');
+    q('#gstart').onclick = start;
+  }
+  function over() {
+    G.running = false; clearInterval(timer); sfx.bad(); sfx.glitch(); hud(); q('').classList.remove('danger');
+    const unlocked = Math.min(G.wins, FRAGS.length), next = FRAGS[G.wins], tease = next ? next.split(' ').slice(0, 3).join(' ') + ' ' + next.split(' ').slice(3).map((w) => '█'.repeat(w.length)).join(' ') : '';
+    overlay(`<h3>TRACE COMPLETE: THEY FOUND YOU</h3><p class="big">${G.score}</p><p>Score · level <b>${G.level}</b> · ${G.wins} codes cracked · <b>${unlocked}/${FRAGS.length}</b> fragments${G.score >= G.best && G.score > 0 ? '<br><b style="color:var(--primary)">NEW BEST!</b>' : ''}</p>${tease ? `<p class="tease">FRAGMENT ${String(G.wins + 1).padStart(2, '0')}: ${esc(tease)}</p><p class="note">Crack one more code to read it.</p>` : '<p class="tease">You uncovered the whole truth. The channel stays open…</p>'}<div class="row" style="justify-content:center"><button class="b go" id="gagain" type="button">TRY AGAIN</button><button class="b" id="gexit" type="button">BACK</button></div>`);
+    q('#gagain').onclick = start; q('#gexit').onclick = () => go('');
+  }
+  document.addEventListener('keydown', (e) => {
+    if (!built || !q('').classList.contains('on') || e.ctrlKey || e.metaKey || e.altKey) return; const k = e.key.toLowerCase();
+    if (!G.running) { if (k === 'enter') { e.preventDefault(); const b = q('#gstart') || q('#gagain'); b && b.click(); } return; }
+    const i = '1234'.indexOf(k) >= 0 ? '1234'.indexOf(k) : 'abcd'.indexOf(k); if (i >= 0 && k.length === 1) { e.preventDefault(); sfx.pick(); choose(i); } else if (k === 'h') hint(); else if (k === 'k') keyHint();
+  });
+  return { open() { build(); intro(); }, stop() { clearInterval(timer); token++; typeTok++; G.running = false; if (built) q('').classList.remove('danger'); }, state: G, choose, hint, keyHint, FRAGS };
+})();
+
 /* ---------- routing ---------- */
 function go(h){$('#wipe').classList.add('on');tone(200,.35,'sawtooth',.1,800);setTimeout(()=>{location.hash=h;setTimeout(()=>$('#wipe').classList.remove('on'),150)},420)}
 function route(){const h=location.hash.slice(1);
- if(h==='encrypt'||h==='decrypt'){document.body.classList.remove('light');$('#cstage').style.display='none';$('#choice').style.display='none';$('#choice').innerHTML='';sec('#tool');$('#fx').style.display='none';render(h);stage='tool'}
- else if(stage==='tool'){view&&view.pause();$('#fx').style.display='';sec(null);showChoice()}}
+ if(h==='encrypt'||h==='decrypt'){document.body.classList.remove('light');$('#cstage').style.display='none';$('#choice').style.display='none';$('#choice').innerHTML='';$('#playBtn').style.display='none';sec('#tool');$('#fx').style.display='none';render(h);stage='tool'}
+ else if(h==='play'){document.body.classList.remove('light');$('#cstage').style.display='none';$('#choice').style.display='none';$('#choice').innerHTML='';$('#playBtn').style.display='none';sec('#play');$('#fx').style.display='none';Game.open();stage='play'}
+ else if(stage==='tool'||stage==='play'){view&&view.pause();Game.stop();$('#fx').style.display='';sec(null);showChoice()}}
 addEventListener('hashchange',route);
-if(/^#(en|de)crypt$/.test(location.hash)){stage='tool';route()}
+WaterBtn.attach($('#playBtn'));
+$('#playBtn').addEventListener('click',()=>{if(stage!=='choice')return;tone(260,.5,'sine',.4,700);setTimeout(()=>tone(900,.12,'triangle',.25),120);VenomTab.ink($('#playBtn'),()=>{location.hash='play'},null,'radial-gradient(circle at 30% 20%,#0b5a78,#031c2a 72%)')});
+if(/^#((en|de)crypt|play)$/.test(location.hash)){stage=location.hash==='#play'?'play':'tool';route()}
 </script>
 </body>
 </html>
